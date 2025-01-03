@@ -27,7 +27,8 @@ jobs:
             --group-id ${{ secrets.SECURITY_GROUP_ID }} \
             --protocol tcp \
             --port 80 \
-            --cidr ${{ steps.ip.outputs.ipv4 }}/32
+            --cidr ${{ steps.ip.outputs.ipv4 }}/32 > /dev/null \
+            && echo "セキュリティグループにIPを追加しました。"
 
       - name: CGIにアクセス
         run: |
@@ -40,4 +41,5 @@ jobs:
             --group-id ${{ secrets.SECURITY_GROUP_ID }} \
             --protocol tcp \
             --port 80 \
-            --cidr ${{ steps.ip.outputs.ipv4 }}/32
+            --cidr ${{ steps.ip.outputs.ipv4 }}/32 > /dev/null \
+            && echo "セキュリティグループからIPを削除しました。"
