@@ -1,0 +1,43 @@
+name: Synchronize Contents
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  access-cgi:
+    runs-on: ubuntu-latest
+    steps:
+      - name: AWSの認証情報を設定
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-1
+
+      - name: GitHubのIPアドレスを取得
+        id: ip
+        uses: haythem/public-ip@v1.2
+
+      - name: セキュリティグループにGitHubのIPを追加
+        run: |
+          aws ec2 authorize-security-group-ingress \
+            --group-id ${{ secrets.SECURITY_GROUP_ID }} \
+            --protocol tcp \
+            --port 80 \
+            --cidr ${{ steps.ip.outputs.ipv4 }}/32
+
+      - name: CGIにアクセス
+        run: |
+          curl http://${{ secrets.CGI_HOST }}/${{ secrets.CGI_PATH }}
+
+      - name: セキュリティグループからGitHubのIPを削除
+        if: always()
+        run: |
+          aws ec2 revoke-security-group-ingress \
+            --group-id ${{ secrets.SECURITY_GROUP_ID }} \
+            --protocol tcp \
+            --port 80 \
+            --cidr ${{ steps.ip.outputs.ipv4 }}/32
