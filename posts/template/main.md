@@ -1,7 +1,6 @@
 ---
-title: "ここにタイトルを入力"
 Keywords:
-Copyright: (C) 2017 Ryuichi Ueda
+Copyright: (C) 2025 Obiko Sato
 ---
 
 # title

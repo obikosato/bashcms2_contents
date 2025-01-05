@@ -1,7 +1,6 @@
 ---
-title: ネギの惑星
 Keywords: ネギ
-Copyright: (C) 2017 Ryuichi Ueda
+Copyright: (C) 2025 Obiko Sato
 ---
 
 # ネギの惑星

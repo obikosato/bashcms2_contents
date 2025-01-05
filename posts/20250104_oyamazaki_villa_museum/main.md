@@ -1,7 +1,6 @@
 ---
-title: "松本竣介の展覧会"
-Keywords:
-Copyright: (C) 2017 Ryuichi Ueda
+Keywords: 大山崎山荘美術館, 松本竣介, 展覧会
+Copyright: (C) 2025 Obiko Sato
 ---
 
 # 松本竣介の展覧会

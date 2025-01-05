@@ -1,7 +1,6 @@
 ---
-title: 実家の3Dプリンターで立体を印刷してみた
 Keywords: 3Dプリンター, Bambu Lab A1 mini, SketchUp
-Copyright: (C) 2017 Ryuichi Ueda
+Copyright: (C) 2025 Obiko Sato
 ---
 
 # 実家の3Dプリンターで立体を印刷してみた

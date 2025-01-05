@@ -1,6 +1,6 @@
 ---
-Keywords:
-Copyright: (C) 2017 Ryuichi Ueda
+Keywords: 元旦
+Copyright: (C) 2025 Obiko Sato
 ---
 
 # 元旦

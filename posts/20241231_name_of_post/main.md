@@ -1,6 +1,6 @@
 ---
-Keywords:
-Copyright: (C) 2017 Ryuichi Ueda
+Keywords: シェルスクリプト, CMS, CGI
+Copyright: (C) 2025 Obiko Sato
 ---
 
 # シェルスクリプト高速開発手法入門を始めた
